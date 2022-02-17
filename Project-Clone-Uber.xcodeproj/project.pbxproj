@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		FE2BCEC927BE138400F46ABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEC827BE138400F46ABF /* AppDelegate.swift */; };
 		FE2BCECB27BE138400F46ABF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCECA27BE138400F46ABF /* SceneDelegate.swift */; };
-		FE2BCECD27BE138400F46ABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCECC27BE138400F46ABF /* ViewController.swift */; };
 		FE2BCED027BE138400F46ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCECE27BE138400F46ABF /* Main.storyboard */; };
 		FE2BCED227BE138400F46ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCED127BE138400F46ABF /* Assets.xcassets */; };
 		FE2BCED527BE138400F46ABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCED327BE138400F46ABF /* LaunchScreen.storyboard */; };
 		FE2BCEE027BE138400F46ABF /* Project_Clone_UberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEDF27BE138400F46ABF /* Project_Clone_UberTests.swift */; };
 		FE2BCEEA27BE138400F46ABF /* Project_Clone_UberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */; };
 		FE2BCEEC27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */; };
+		FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEFE27BE148200F46ABF /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		FE2BCEC527BE138400F46ABF /* Project-Clone-Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Clone-Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2BCEC827BE138400F46ABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE2BCECA27BE138400F46ABF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE2BCECC27BE138400F46ABF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE2BCECF27BE138400F46ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE2BCED127BE138400F46ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2BCED427BE138400F46ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		FE2BCEE527BE138400F46ABF /* Project-Clone-UberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-Clone-UberUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITests.swift; sourceTree = "<group>"; };
 		FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FE2BCEFE27BE148200F46ABF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +99,13 @@
 		FE2BCEC727BE138400F46ABF /* Project-Clone-Uber */ = {
 			isa = PBXGroup;
 			children = (
+				FE2BCEFD27BE13C800F46ABF /* View */,
+				FE2BCEFC27BE13B200F46ABF /* Model */,
+				FE2BCEFA27BE13AE00F46ABF /* Controller */,
+				FE2BCEF927BE13AC00F46ABF /* Service */,
+				FE2BCEF827BE13AA00F46ABF /* Utils */,
 				FE2BCEC827BE138400F46ABF /* AppDelegate.swift */,
 				FE2BCECA27BE138400F46ABF /* SceneDelegate.swift */,
-				FE2BCECC27BE138400F46ABF /* ViewController.swift */,
 				FE2BCECE27BE138400F46ABF /* Main.storyboard */,
 				FE2BCED127BE138400F46ABF /* Assets.xcassets */,
 				FE2BCED327BE138400F46ABF /* LaunchScreen.storyboard */,
@@ -125,6 +129,42 @@
 				FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */,
 			);
 			path = "Project-Clone-UberUITests";
+			sourceTree = "<group>";
+		};
+		FE2BCEF827BE13AA00F46ABF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FE2BCEF927BE13AC00F46ABF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FE2BCEFA27BE13AE00F46ABF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE2BCEFE27BE148200F46ABF /* LoginController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FE2BCEFC27BE13B200F46ABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FE2BCEFD27BE13C800F46ABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2BCECD27BE138400F46ABF /* ViewController.swift in Sources */,
 				FE2BCEC927BE138400F46ABF /* AppDelegate.swift in Sources */,
+				FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */,
 				FE2BCECB27BE138400F46ABF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +495,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,7 +522,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
