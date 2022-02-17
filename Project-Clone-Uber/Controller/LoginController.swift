@@ -11,8 +11,10 @@ class LoginController: UIViewController {
     
     //MARK: - Properties
     
-    private let titleLabel: UILabel = {
+    private let titleLabel: UILabel = { //레이블을 클로져 형태로 만들기
         let label = UILabel()
+        label.text = "UBER"
+        label.font = UIFont(name: "Avenir-Light", size: 36)
         return label
     }()
     
@@ -21,5 +23,6 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
     }
 }
