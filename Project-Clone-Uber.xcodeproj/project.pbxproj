@@ -16,6 +16,7 @@
 		FE2BCEEA27BE138400F46ABF /* Project_Clone_UberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */; };
 		FE2BCEEC27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */; };
 		FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEFE27BE148200F46ABF /* LoginController.swift */; };
+		FE2BCF0127BE229600F46ABF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCF0027BE229600F46ABF /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITests.swift; sourceTree = "<group>"; };
 		FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FE2BCEFE27BE148200F46ABF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		FE2BCF0027BE229600F46ABF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		FE2BCEF827BE13AA00F46ABF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				FE2BCF0027BE229600F46ABF /* Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				FE2BCEC927BE138400F46ABF /* AppDelegate.swift in Sources */,
 				FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */,
 				FE2BCECB27BE138400F46ABF /* SceneDelegate.swift in Sources */,
+				FE2BCF0127BE229600F46ABF /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
