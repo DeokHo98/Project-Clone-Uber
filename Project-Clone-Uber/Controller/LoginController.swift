@@ -27,11 +27,15 @@ class LoginController: UIViewController {
     
     //로그인 - 이메일
     private lazy var emailContrainerView: UIView = {
-        return UIView().inputContainerView(image: UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
+        let view = UIView().inputContainerView(image: UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true //이메일 부분 높이 설정
+        return view
     }()
     
     private let emailTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
+        let view = UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true //높잇 설정
+        return view
     }()
     
     
@@ -67,13 +71,10 @@ class LoginController: UIViewController {
         let stack = UIStackView(arrangedSubviews: [emailContrainerView, passwordContrainerView])
         stack.axis = .vertical
         stack.distribution = .fillEqually
-        
-        
-        
-        view.addSubview(emailContrainerView)
-        emailContrainerView.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16, height: 50)
-        view.addSubview(passwordContrainerView)
-        passwordContrainerView.anchor(top: emailContrainerView.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 16, paddingLeft: 16, paddingRight: 16, height: 50)
+        stack.spacing = 16
+        view.addSubview(stack)
+        stack.anchor(top: titleLabel.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 40, paddingLeft: 16, paddingRight: 16)
+   
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle { //시간이나 와이파이같은 스테이터스 바의 스타일을 바꾸는 코드
