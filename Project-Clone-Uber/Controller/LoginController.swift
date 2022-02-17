@@ -67,9 +67,13 @@ class LoginController: UIViewController {
         
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint]))
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
+    
+    
+    
     //MARK: - Lifecycle
 
     
@@ -77,9 +81,31 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+
+    }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { //시간이나 와이파이같은 스테이터스 바의 스타일을 바꾸는 코드
+        return .lightContent
+    }
+    
+    
+    //MARK: - selectors
+    
+    @objc func handleShowSignUp() {
+        let LC = SignUpController()
+        navigationController?.pushViewController(LC, animated: true)
+    }
+    
+    
+    //MARK: -  Helper Functions
+    
+    func configureUI() {
+        configureNaviagationBar()
         
         view.backgroundColor = .backgroundColor
-        
         view.addSubview(titleLabel)
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
         titleLabel.centerX(inView: view)
@@ -97,7 +123,8 @@ class LoginController: UIViewController {
         dontHaveAccountButton.centerX(inView: view)
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle { //시간이나 와이파이같은 스테이터스 바의 스타일을 바꾸는 코드
-        return .lightContent
+    func configureNaviagationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
     }
 }
