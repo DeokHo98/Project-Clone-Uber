@@ -50,3 +50,58 @@ class LoginController: UIViewController {
 }
 
 ```
+
+## 오토레이아웃울 코드로 아주 편하게 잡을수 있는 extension
+```swift
+import UIKit
+
+extension UIView {
+    func anchor(top: NSLayoutYAxisAnchor? = nil,left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingTop: CGFloat = 0, paddingLeft: CGFloat = 0, paddingBottom: CGFloat = 0, paddingRight: CGFloat = 0, width: CGFloat? = nil, height: CGFloat? = nil) {
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: paddingTop).isActive = true
+        }
+        
+        if let left = left {
+            leftAnchor.constraint(equalTo: left, constant: paddingLeft).isActive = true
+        }
+        
+        if let bottom = bottom {
+            bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+        }
+        
+        if let right = right {
+            rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+        }
+        
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+    }
+    
+    func centerX(inView view: UIView) {
+        centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+}
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = UIColor(displayP3Red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
+        
+        view.addSubview(titleLabel)
+        titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
+        titleLabel.centerX(inView: view)
+    }
+
+//이렇게 하면 레이블을 아주 쉽게 내가 원하는데로 레이아웃을 쉽게 잡을수 있다.
+//한번 설정해두면 나중에 복사해서 쓰기도 편하다.
+
+```
+
