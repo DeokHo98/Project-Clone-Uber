@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -16,7 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: LoginController())
+        
+        
+        
+            if Auth.auth().currentUser == nil {
+                    window?.rootViewController = UINavigationController(rootViewController: LoginController())
+                print("유저는 로그인 실패")
+            } else {
+                window?.rootViewController = UINavigationController(rootViewController: HomeController())
+                print("유저 로그인 성공")
+            }
         
     }
 

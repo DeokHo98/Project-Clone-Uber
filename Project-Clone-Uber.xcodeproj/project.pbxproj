@@ -23,6 +23,7 @@
 		FE2BCF0C27BFA88300F46ABF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0B27BFA88300F46ABF /* FirebaseFirestore */; };
 		FE2BCF0E27BFA88300F46ABF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0D27BFA88300F46ABF /* FirebaseStorage */; };
 		FE2BCF1227BFAAD400F46ABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */; };
+		FE2BCF1427BFBDCF00F46ABF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FE2BCF0027BE229600F46ABF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FE2BCF0227BE628300F46ABF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				FE2BCEFE27BE148200F46ABF /* LoginController.swift */,
 				FE2BCF0227BE628300F46ABF /* SignUpController.swift */,
+				FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				FE2BCEC927BE138400F46ABF /* AppDelegate.swift in Sources */,
 				FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */,
+				FE2BCF1427BFBDCF00F46ABF /* HomeController.swift in Sources */,
 				FE2BCF0327BE628300F46ABF /* SignUpController.swift in Sources */,
 				FE2BCECB27BE138400F46ABF /* SceneDelegate.swift in Sources */,
 				FE2BCF0127BE229600F46ABF /* Extension.swift in Sources */,

@@ -47,7 +47,7 @@ extension UIView {
         let separatorView = UIView()
         separatorView.backgroundColor = .lightGray
         view.addSubview(separatorView)
-        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8,height: 0.75)
+        separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8,paddingRight: 8,height: 0.75)
         return view
     }
     

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class LoginController: UIViewController {
     
     //MARK: - Properties
@@ -54,6 +54,7 @@ class LoginController: UIViewController {
     private let loginButton: UIButton = {
         let button = UIButton().loginButton()
         button.setTitle("Log in", for: .normal)
+        button.addTarget(self, action: #selector(loginButtonClick), for: .touchUpInside)
         return button
     }()
     
@@ -74,7 +75,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-
+        emailTextField.text = "ekdj98@gmail.com"
+        passwordTextField.text = "123456"
     }
     
     
@@ -87,10 +89,23 @@ class LoginController: UIViewController {
     //MARK: - selectors
     
     @objc func handleShowSignUp() {
-        let LC = SignUpController()
-        navigationController?.pushViewController(LC, animated: true)
+        navigationController?.pushViewController(SignUpController(), animated: true)
     }
     
+    
+    @objc func loginButtonClick() {
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if error != nil {
+                    print("로그인 에러")
+                    return
+                } else {
+                    print("로그인 성공")
+                    self.navigationController?.pushViewController(HomeController(), animated: true)
+                }
+            }
+        }
+    }
     
     //MARK: -  Helper Functions
     

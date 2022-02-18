@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class SignUpController: UIViewController {
     //MARK: - Properties
@@ -66,9 +68,10 @@ class SignUpController: UIViewController {
         return sc
     }()
     
-    private let loginButton: UIButton = {
+    private let SingUpButton: UIButton = {
         let button = UIButton().loginButton()
         button.setTitle("Sign Up", for: .normal)
+        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
         return button
     }()
     
@@ -101,6 +104,40 @@ class SignUpController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @objc func handleSignUp() {
+        guard let email = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        guard let fullname = fullnameTextField.text else {return}
+        let accountTypeIndex = accountTypeSegmentedControl.selectedSegmentIndex
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("회원가입 에러 \(error)")
+                return
+            } else {
+                self.navigationController?.popViewController(animated: true)
+                if result?.user != nil {
+                    let values: [String: Any] = ["email": email,
+                                                 "fullname": fullname,
+                                                 "accountType": accountTypeIndex]
+                    let db = Firestore.firestore()
+                    db.collection("users").addDocument(data: values) { error in
+                        if let error = error {
+                            print("데이터 저장 에러 \(error)")
+                        } else {
+                            print("데이터 저장 성공")
+                            do {
+                                print("로그아웃 성공")
+                                try Auth.auth().signOut()
+                            } catch {
+                                print("로그아웃실패")
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     //MARK: - Helper functions
     
@@ -111,7 +148,7 @@ class SignUpController: UIViewController {
         titleLabel.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 20)
         titleLabel.centerX(inView: view)
         
-        let stack = UIStackView(arrangedSubviews: [emailContrainerView, fullnameContrainerView ,passwordContrainerView,accounContrainerView, loginButton])
+        let stack = UIStackView(arrangedSubviews: [emailContrainerView, fullnameContrainerView ,passwordContrainerView,accounContrainerView, SingUpButton])
         stack.axis = .vertical
         stack.distribution = .fillProportionally
         stack.spacing = 24
