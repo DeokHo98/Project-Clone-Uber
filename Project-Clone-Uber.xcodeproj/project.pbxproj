@@ -22,7 +22,7 @@
 		FE2BCF0A27BFA88300F46ABF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0927BFA88300F46ABF /* FirebaseDatabase */; };
 		FE2BCF0C27BFA88300F46ABF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0B27BFA88300F46ABF /* FirebaseFirestore */; };
 		FE2BCF0E27BFA88300F46ABF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0D27BFA88300F46ABF /* FirebaseStorage */; };
-		FE2BCF1027BFA97C00F46ABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCF0F27BFA97C00F46ABF /* GoogleService-Info.plist */; };
+		FE2BCF1227BFAAD400F46ABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		FE2BCEFE27BE148200F46ABF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		FE2BCF0027BE229600F46ABF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FE2BCF0227BE628300F46ABF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		FE2BCF0F27BFA97C00F46ABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,7 +142,6 @@
 			children = (
 				FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */,
 				FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */,
-				FE2BCF0F27BFA97C00F46ABF /* GoogleService-Info.plist */,
 			);
 			path = "Project-Clone-UberUITests";
 			sourceTree = "<group>";
@@ -300,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2BCED527BE138400F46ABF /* LaunchScreen.storyboard in Resources */,
+				FE2BCF1227BFAAD400F46ABF /* GoogleService-Info.plist in Resources */,
 				FE2BCED227BE138400F46ABF /* Assets.xcassets in Resources */,
 				FE2BCED027BE138400F46ABF /* Main.storyboard in Resources */,
 			);
@@ -316,7 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2BCF1027BFA97C00F46ABF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
