@@ -28,21 +28,22 @@ class LoginController: UIViewController {
     //로그인 - 이메일
     private lazy var emailContrainerView: UIView = {
         let view = UIView().inputContainerView(image: UIImage(named: "ic_mail_outline_white_2x")!, textField: emailTextField)
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true //이메일 부분 높이 설정
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true //이메일 부분 높이 설정)
         return view
     }()
     
     private let emailTextField: UITextField = {
-        let view = UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
-        view.heightAnchor.constraint(equalToConstant: 50).isActive = true //높잇 설정
-        return view
+        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
     }()
     
     
     //로그인 - 비밀번호
     private lazy var passwordContrainerView: UIView = {
-        return UIView().inputContainerView(image: UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
+        let view = UIView().inputContainerView(image: UIImage(named: "ic_lock_outline_white_2x")!, textField: passwordTextField)
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        return view
     }()
+    
     
     private let passwordTextField: UITextField = {
         return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
@@ -51,24 +52,15 @@ class LoginController: UIViewController {
     
     //로그인 - 로그인버튼
     private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton().loginButton()
         button.setTitle("Log in", for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
-        button.backgroundColor = .mainBlueTint
-        button.layer.cornerRadius = 5
-        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         return button
     }()
     
     
     private let dontHaveAccountButton: UIButton = {
-        let button = UIButton(type: .system)
-        
-        let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.mainBlueTint]))
+        let button = UIButton().textButton(message: "Don't have an account?")
         button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
-        button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
     
