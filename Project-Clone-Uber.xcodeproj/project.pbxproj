@@ -12,36 +12,10 @@
 		FE2BCED027BE138400F46ABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCECE27BE138400F46ABF /* Main.storyboard */; };
 		FE2BCED227BE138400F46ABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCED127BE138400F46ABF /* Assets.xcassets */; };
 		FE2BCED527BE138400F46ABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCED327BE138400F46ABF /* LaunchScreen.storyboard */; };
-		FE2BCEE027BE138400F46ABF /* Project_Clone_UberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEDF27BE138400F46ABF /* Project_Clone_UberTests.swift */; };
-		FE2BCEEA27BE138400F46ABF /* Project_Clone_UberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */; };
-		FE2BCEEC27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */; };
-		FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCEFE27BE148200F46ABF /* LoginController.swift */; };
-		FE2BCF0127BE229600F46ABF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCF0027BE229600F46ABF /* Extension.swift */; };
-		FE2BCF0327BE628300F46ABF /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCF0227BE628300F46ABF /* SignUpController.swift */; };
-		FE2BCF0827BFA88300F46ABF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0727BFA88300F46ABF /* FirebaseAuth */; };
-		FE2BCF0A27BFA88300F46ABF /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0927BFA88300F46ABF /* FirebaseDatabase */; };
-		FE2BCF0C27BFA88300F46ABF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0B27BFA88300F46ABF /* FirebaseFirestore */; };
-		FE2BCF0E27BFA88300F46ABF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = FE2BCF0D27BFA88300F46ABF /* FirebaseStorage */; };
 		FE2BCF1227BFAAD400F46ABF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */; };
-		FE2BCF1427BFBDCF00F46ABF /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */; };
+		FED4B31427D4860600D83F23 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4B31327D4860600D83F23 /* loginViewController.swift */; };
+		FED4B31627D489D300D83F23 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED4B31527D489D300D83F23 /* extension.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FE2BCEDC27BE138400F46ABF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE2BCEBD27BE138400F46ABF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE2BCEC427BE138400F46ABF;
-			remoteInfo = "Project-Clone-Uber";
-		};
-		FE2BCEE627BE138400F46ABF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE2BCEBD27BE138400F46ABF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE2BCEC427BE138400F46ABF;
-			remoteInfo = "Project-Clone-Uber";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FE2BCEC527BE138400F46ABF /* Project-Clone-Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-Clone-Uber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,38 +25,13 @@
 		FE2BCED127BE138400F46ABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2BCED427BE138400F46ABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE2BCED627BE138400F46ABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FE2BCEDB27BE138400F46ABF /* Project-Clone-UberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-Clone-UberTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE2BCEDF27BE138400F46ABF /* Project_Clone_UberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberTests.swift; sourceTree = "<group>"; };
-		FE2BCEE527BE138400F46ABF /* Project-Clone-UberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-Clone-UberUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITests.swift; sourceTree = "<group>"; };
-		FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_Clone_UberUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		FE2BCEFE27BE148200F46ABF /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		FE2BCF0027BE229600F46ABF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		FE2BCF0227BE628300F46ABF /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		FE2BCF1127BFA97E00F46ABF /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		FED4B31327D4860600D83F23 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
+		FED4B31527D489D300D83F23 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FE2BCEC227BE138400F46ABF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE2BCF0A27BFA88300F46ABF /* FirebaseDatabase in Frameworks */,
-				FE2BCF0E27BFA88300F46ABF /* FirebaseStorage in Frameworks */,
-				FE2BCF0827BFA88300F46ABF /* FirebaseAuth in Frameworks */,
-				FE2BCF0C27BFA88300F46ABF /* FirebaseFirestore in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE2BCED827BE138400F46ABF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE2BCEE227BE138400F46ABF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -96,8 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				FE2BCEC727BE138400F46ABF /* Project-Clone-Uber */,
-				FE2BCEDE27BE138400F46ABF /* Project-Clone-UberTests */,
-				FE2BCEE827BE138400F46ABF /* Project-Clone-UberUITests */,
 				FE2BCEC627BE138400F46ABF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,8 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				FE2BCEC527BE138400F46ABF /* Project-Clone-Uber.app */,
-				FE2BCEDB27BE138400F46ABF /* Project-Clone-UberTests.xctest */,
-				FE2BCEE527BE138400F46ABF /* Project-Clone-UberUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,27 +76,10 @@
 			path = "Project-Clone-Uber";
 			sourceTree = "<group>";
 		};
-		FE2BCEDE27BE138400F46ABF /* Project-Clone-UberTests */ = {
-			isa = PBXGroup;
-			children = (
-				FE2BCEDF27BE138400F46ABF /* Project_Clone_UberTests.swift */,
-			);
-			path = "Project-Clone-UberTests";
-			sourceTree = "<group>";
-		};
-		FE2BCEE827BE138400F46ABF /* Project-Clone-UberUITests */ = {
-			isa = PBXGroup;
-			children = (
-				FE2BCEE927BE138400F46ABF /* Project_Clone_UberUITests.swift */,
-				FE2BCEEB27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift */,
-			);
-			path = "Project-Clone-UberUITests";
-			sourceTree = "<group>";
-		};
 		FE2BCEF827BE13AA00F46ABF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				FE2BCF0027BE229600F46ABF /* Extension.swift */,
+				FED4B31527D489D300D83F23 /* extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -166,9 +94,7 @@
 		FE2BCEFA27BE13AE00F46ABF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FE2BCEFE27BE148200F46ABF /* LoginController.swift */,
-				FE2BCF0227BE628300F46ABF /* SignUpController.swift */,
-				FE2BCF1327BFBDCF00F46ABF /* HomeController.swift */,
+				FED4B31327D4860600D83F23 /* loginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,50 +130,10 @@
 			);
 			name = "Project-Clone-Uber";
 			packageProductDependencies = (
-				FE2BCF0727BFA88300F46ABF /* FirebaseAuth */,
-				FE2BCF0927BFA88300F46ABF /* FirebaseDatabase */,
-				FE2BCF0B27BFA88300F46ABF /* FirebaseFirestore */,
-				FE2BCF0D27BFA88300F46ABF /* FirebaseStorage */,
 			);
 			productName = "Project-Clone-Uber";
 			productReference = FE2BCEC527BE138400F46ABF /* Project-Clone-Uber.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FE2BCEDA27BE138400F46ABF /* Project-Clone-UberTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE2BCEF227BE138400F46ABF /* Build configuration list for PBXNativeTarget "Project-Clone-UberTests" */;
-			buildPhases = (
-				FE2BCED727BE138400F46ABF /* Sources */,
-				FE2BCED827BE138400F46ABF /* Frameworks */,
-				FE2BCED927BE138400F46ABF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE2BCEDD27BE138400F46ABF /* PBXTargetDependency */,
-			);
-			name = "Project-Clone-UberTests";
-			productName = "Project-Clone-UberTests";
-			productReference = FE2BCEDB27BE138400F46ABF /* Project-Clone-UberTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FE2BCEE427BE138400F46ABF /* Project-Clone-UberUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE2BCEF527BE138400F46ABF /* Build configuration list for PBXNativeTarget "Project-Clone-UberUITests" */;
-			buildPhases = (
-				FE2BCEE127BE138400F46ABF /* Sources */,
-				FE2BCEE227BE138400F46ABF /* Frameworks */,
-				FE2BCEE327BE138400F46ABF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE2BCEE727BE138400F46ABF /* PBXTargetDependency */,
-			);
-			name = "Project-Clone-UberUITests";
-			productName = "Project-Clone-UberUITests";
-			productReference = FE2BCEE527BE138400F46ABF /* Project-Clone-UberUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -262,14 +148,6 @@
 					FE2BCEC427BE138400F46ABF = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
-					FE2BCEDA27BE138400F46ABF = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = FE2BCEC427BE138400F46ABF;
-					};
-					FE2BCEE427BE138400F46ABF = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = FE2BCEC427BE138400F46ABF;
-					};
 				};
 			};
 			buildConfigurationList = FE2BCEC027BE138400F46ABF /* Build configuration list for PBXProject "Project-Clone-Uber" */;
@@ -282,15 +160,12 @@
 			);
 			mainGroup = FE2BCEBC27BE138400F46ABF;
 			packageReferences = (
-				FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FE2BCEC627BE138400F46ABF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FE2BCEC427BE138400F46ABF /* Project-Clone-Uber */,
-				FE2BCEDA27BE138400F46ABF /* Project-Clone-UberTests */,
-				FE2BCEE427BE138400F46ABF /* Project-Clone-UberUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -307,20 +182,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE2BCED927BE138400F46ABF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE2BCEE327BE138400F46ABF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -329,45 +190,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE2BCEC927BE138400F46ABF /* AppDelegate.swift in Sources */,
-				FE2BCEFF27BE148200F46ABF /* LoginController.swift in Sources */,
-				FE2BCF1427BFBDCF00F46ABF /* HomeController.swift in Sources */,
-				FE2BCF0327BE628300F46ABF /* SignUpController.swift in Sources */,
 				FE2BCECB27BE138400F46ABF /* SceneDelegate.swift in Sources */,
-				FE2BCF0127BE229600F46ABF /* Extension.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE2BCED727BE138400F46ABF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE2BCEE027BE138400F46ABF /* Project_Clone_UberTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE2BCEE127BE138400F46ABF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE2BCEEC27BE138400F46ABF /* Project_Clone_UberUITestsLaunchTests.swift in Sources */,
-				FE2BCEEA27BE138400F46ABF /* Project_Clone_UberUITests.swift in Sources */,
+				FED4B31427D4860600D83F23 /* loginViewController.swift in Sources */,
+				FED4B31627D489D300D83F23 /* extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FE2BCEDD27BE138400F46ABF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE2BCEC427BE138400F46ABF /* Project-Clone-Uber */;
-			targetProxy = FE2BCEDC27BE138400F46ABF /* PBXContainerItemProxy */;
-		};
-		FE2BCEE727BE138400F46ABF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE2BCEC427BE138400F46ABF /* Project-Clone-Uber */;
-			targetProxy = FE2BCEE627BE138400F46ABF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FE2BCECE27BE138400F46ABF /* Main.storyboard */ = {
@@ -559,78 +388,6 @@
 			};
 			name = Release;
 		};
-		FE2BCEF327BE138400F46ABF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DeokHo98.Project-Clone-UberTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project-Clone-Uber.app/Project-Clone-Uber";
-			};
-			name = Debug;
-		};
-		FE2BCEF427BE138400F46ABF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DeokHo98.Project-Clone-UberTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Project-Clone-Uber.app/Project-Clone-Uber";
-			};
-			name = Release;
-		};
-		FE2BCEF627BE138400F46ABF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DeokHo98.Project-Clone-UberUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project-Clone-Uber";
-			};
-			name = Debug;
-		};
-		FE2BCEF727BE138400F46ABF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "DeokHo98.Project-Clone-UberUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Project-Clone-Uber";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,59 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FE2BCEF227BE138400F46ABF /* Build configuration list for PBXNativeTarget "Project-Clone-UberTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE2BCEF327BE138400F46ABF /* Debug */,
-				FE2BCEF427BE138400F46ABF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE2BCEF527BE138400F46ABF /* Build configuration list for PBXNativeTarget "Project-Clone-UberUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE2BCEF627BE138400F46ABF /* Debug */,
-				FE2BCEF727BE138400F46ABF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FE2BCF0727BFA88300F46ABF /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		FE2BCF0927BFA88300F46ABF /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		FE2BCF0B27BFA88300F46ABF /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		FE2BCF0D27BFA88300F46ABF /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE2BCF0627BFA88300F46ABF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE2BCEBD27BE138400F46ABF /* Project object */;
 }
