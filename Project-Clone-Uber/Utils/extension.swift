@@ -14,7 +14,7 @@ extension UIColor {
 
 extension UIView {
     
-    func inputContainerView(imageView: UIImageView, texField: UITextField) -> UIView {
+    static func inputContainerView(imageView: UIImageView, texField: UITextField) -> UIView {
         let view = UIView()
     
         view.addSubview(imageView)
@@ -81,12 +81,13 @@ extension UIView {
 
 extension UITextField {
     
-    func textField(plachHolderName: String, isSecureText: Bool) -> UITextField {
+    static func textField(plachHolderName: String, isSecureText: Bool) -> UITextField {
         let textField = UITextField()
         textField.borderStyle = .none
         textField.font = UIFont.systemFont(ofSize: 16)
         textField.keyboardAppearance = .dark
         textField.isSecureTextEntry = isSecureText
+        textField.textColor = .white
         textField.attributedPlaceholder = NSAttributedString(
             string: plachHolderName,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
@@ -97,16 +98,16 @@ extension UITextField {
 }
 
 extension UIImageView {
-    func imageView(imageName: String) -> UIImageView {
+    static func imageView(imageName: String, alpha: CGFloat = 1) -> UIImageView {
         let image = UIImageView()
         image.image = UIImage(named: imageName)
-        image.alpha = 0.87
+        image.alpha = alpha
         return image
     }
 }
 
 extension UIButton {
-    func loginButton(buttonLabel: String) -> UIButton {
+   static func loginButton(buttonLabel: String) -> UIButton {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemBlue
         button.setTitle(buttonLabel, for: .normal)
@@ -117,11 +118,21 @@ extension UIButton {
         return button
     }
     
-    func textButton(text1: String, text2: String) -> UIButton{
+    static func textButton(text1: String, text2: String) -> UIButton{
              let button = UIButton(type: .system)
              let attributedTitle = NSMutableAttributedString(string: text1, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.lightGray])
              attributedTitle.append(NSAttributedString(string: text2, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: UIColor.systemBlue]))
              button.setAttributedTitle(attributedTitle, for: .normal)
              return button
+    }
+}
+
+extension UILabel {
+    static func uberTitleLabel() -> UILabel {
+        let label = UILabel()
+        label.text = "UBER"
+        label.font = UIFont(name: "Avenir-Light", size: 36)
+        label.textColor = .white
+        return label
     }
 }
