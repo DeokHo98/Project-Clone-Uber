@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class loginViewController: UIViewController {
     
@@ -14,16 +15,14 @@ class loginViewController: UIViewController {
         UILabel.uberTitleLabel()
     }()
     
+    private let emailTextField: UITextField = {
+        return UITextField.textField(plachHolderName: "email", isSecureText: false)
+   }()
     
-    private let emailContainerView: UIView = {
+    private lazy var emailContainerView: UIView = {
         
         let imageView: UIImageView = {
             UIImageView.imageView(imageName: "email",alpha: 0.87)
-        }()
-        
-        
-         let emailTextField: UITextField = {
-             return UITextField.textField(plachHolderName: "email", isSecureText: false)
         }()
         
         
@@ -31,23 +30,25 @@ class loginViewController: UIViewController {
     }()
     
     
-    private let PasswordContainerView: UIView = {
+    private let PasswordField: UITextField = {
+         return UITextField.textField(plachHolderName: "Password", isSecureText: true)
+    }()
+    
+    private lazy var PasswordContainerView: UIView = {
         
         let imageView: UIImageView = {
             UIImageView.imageView(imageName: "password",alpha: 0.87)
         }()
     
-        
-         let PasswordField: UITextField = {
-             return UITextField.textField(plachHolderName: "Password", isSecureText: true)
-        }()
-        
+    
         return UIView.inputContainerView(imageView: imageView, texField: PasswordField)
     }()
     
     
     private let LoginButton: UIButton = {
-        return UIButton.loginButton(buttonLabel: "Log in")
+        let button = UIButton.loginButton(buttonLabel: "Log in")
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
+        return button
     }()
     
     private let accountButton: UIButton = {
@@ -64,6 +65,18 @@ class loginViewController: UIViewController {
         navigationController?.pushViewController(SignupViewController(), animated: true)
     }
     
+    @objc func handleLogin() {
+        guard let email = emailTextField.text else {return}
+        guard let password = PasswordField.text else {return}
+        Auth.auth().signIn(withEmail: email, password: password) { [self] result, error in
+            if error != nil {
+                print("로그인 에러")
+                return
+            } else {
+                navigationController?.pushViewController(HomeController(), animated: true)
+            }
+        }
+    }
     
     
     
@@ -75,6 +88,9 @@ class loginViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .backgroundColor
         makeLayout()
+        
+        emailTextField.text = "ekdj98@gmail.com"
+        PasswordField.text = "123456"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +119,7 @@ class loginViewController: UIViewController {
         PasswordContainerView.anchor(top: emailContainerView.bottomAnchor,leading: view.leadingAnchor,trailng: view.trailingAnchor,paddingTop: 16,paddingLeading: 16,paddingTrailing: 16,height: 50)
         
         view.addSubview(LoginButton)
-        LoginButton.anchor(top: PasswordContainerView.bottomAnchor,leading: view.leadingAnchor,trailng: view.trailingAnchor,paddingTop: 16,paddingLeading: 16,paddingTrailing: 16)
+        LoginButton.anchor(top: PasswordContainerView.bottomAnchor,leading: view.leadingAnchor,trailng: view.trailingAnchor,paddingTop: 32,paddingLeading: 16,paddingTrailing: 16)
         
         view.addSubview(accountButton)
         accountButton.centerX(inView: view)
