@@ -30,6 +30,16 @@ class HomeController: UIViewController {
     
     private final let locationInputViewheight: CGFloat = 200
     
+    private var user: User? {
+        didSet {
+            guard let user = user else {return}
+            loccationInputView.user = user
+            signOut()
+        }
+    }
+    
+    
+    
     //MARK: - 라이프사이클
 
     override func viewDidLoad() {
@@ -43,8 +53,10 @@ class HomeController: UIViewController {
         makeLayout()
         enableLocationServices()
         configureTableView()
+        fetchUserData()
     }
     
+        
 
     
 //MARK: - API
@@ -54,6 +66,12 @@ class HomeController: UIViewController {
            try Auth.auth().signOut()
         } catch {
             print("로그아웃 에러")
+        }
+    }
+    
+    func fetchUserData() {
+        Service.shared.fetchData { user in
+            self.user = user
         }
     }
     
@@ -154,7 +172,6 @@ extension HomeController: LocationInputActivationViewDelegate {
 //MARK: - 로케이션 인풋 뷰 델리게이트
 extension HomeController: LocationInputViewDelegate {
     func dismissLocationInputView() {
-
         UIView.animate(withDuration: 0.3) {
             self.loccationInputView.alpha = 0
         } completion: { _ in

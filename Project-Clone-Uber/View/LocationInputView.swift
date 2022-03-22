@@ -16,6 +16,13 @@ class LocationInputView: UIView {
 
     //MARK: - 속성
     
+    var user: User? {
+        didSet{
+            guard let user = user else {return}
+            titleLabel.text = user.fullName
+        }
+    }
+    
     weak var delegate: LocationInputViewDelegate?
     
     private let backButton: UIButton = {

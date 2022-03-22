@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import GeoFire
 
 class SignupViewController: UIViewController {
 
@@ -111,7 +112,7 @@ class SignupViewController: UIViewController {
             } else {
                 guard let uid = result?.user.email else {return}
                 let value = ["email": email, "name": name, "accountType": accountTypeIndex] as [String: Any]
-                db.collection(uid).addDocument(data: value)
+                db.collection("user").document(uid).setData(value)
                 navigationController?.popViewController(animated: true)
             }
         }
