@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 extension UIColor {
     static let backgroundColor = UIColor(displayP3Red: 25/255, green: 25/255, blue: 25/255, alpha: 1)
@@ -76,7 +77,7 @@ extension UIView {
     }
     func centerY(inView view: UIView, leftAnchor: NSLayoutXAxisAnchor? = nil, paddingLeft: CGFloat = 0, constant: CGFloat = 0) {
         translatesAutoresizingMaskIntoConstraints = false
-        centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: constant).isActive = true
         if let left = leftAnchor {
             anchor(leading: left, paddingLeading: paddingLeft)
         }
@@ -129,7 +130,7 @@ extension UIButton {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemBlue
         button.setTitle(buttonLabel, for: .normal)
-        button.setTitleColor(UIColor(white: 1, alpha: 0.5), for: .normal)
+        button.setTitleColor(UIColor(white: 1, alpha: 1), for: .normal)
         button.layer.cornerRadius = 5
         button.anchor(height: 50)
         button.titleLabel?.font = .systemFont(ofSize: 24)
@@ -152,5 +153,106 @@ extension UILabel {
         label.font = UIFont(name: "Avenir-Light", size: 36)
         label.textColor = .white
         return label
+    }
+}
+
+extension UIImage {
+    func resizeImage(image: UIImage,height: CGFloat, width: CGFloat) -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: width, height: height))
+        image.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+}
+
+
+extension MKPlacemark {
+    var address: String? {
+        get {
+            guard let subthorughtfare = subThoroughfare else { return nil}
+            guard let thoroughtfare = thoroughfare else { return nil}
+            guard let locality = locality else {return nil}
+            guard let adminArea = administrativeArea else {return nil}
+            
+            return "\(adminArea) \(locality) \(thoroughtfare) \(subthorughtfare)"
+        }
+    }
+}
+
+extension MKMapView {
+    func zoomToFit(annotaitions: [MKAnnotation]) {
+        var zommRect = MKMapRect.null
+        
+        annotaitions.forEach { annotaion in
+            let annotationPoint = MKMapPoint(annotaion.coordinate)
+            let pointRect = MKMapRect(x: annotationPoint.x, y: annotationPoint.y, width: 0.01, height: 0.01)
+            zommRect = zommRect.union(pointRect)
+        }
+        //이걸 조정하면 맵뷰 줌되는 정도를 조절할수있다.
+        let inset = UIEdgeInsets(top: 100, left: 100, bottom: 300, right: 100)
+        setVisibleMapRect(zommRect, edgePadding: inset, animated: true)
+    }
+    
+    func addAnnotationAndSelect(coordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        addAnnotation(annotation)
+        selectAnnotation(annotation, animated: true)
+    }
+}
+
+
+extension UIViewController {
+    func shouldPresentLoading(_ present: Bool, message: String? = nil) {
+        if present {
+            let view = UIView()
+            view.frame = self.view.frame
+            view.backgroundColor = .black
+            view.alpha = 0
+            view.tag = 1
+            
+            
+            let indicator = UIActivityIndicatorView()
+            indicator.style = .large
+            indicator.center = view.center
+            
+            let label = UILabel()
+            label.text = message
+            label.font = .systemFont(ofSize: 20)
+            label.textColor = .white
+            label.textAlignment = .center
+            label.alpha = 0.87
+            
+            self.view.addSubview(view)
+            view.addSubview(indicator)
+            view.addSubview(label)
+            
+            label.centerX(inView: view)
+            label.anchor(top: indicator.bottomAnchor, paddingTop: 32)
+            
+            indicator.startAnimating()
+            UIView.animate(withDuration: 0.3) {
+                view.alpha = 0.7
+            }
+        } else {
+            view.subviews.forEach { subview in
+                if subview.tag == 1 {
+                    UIView.animate(withDuration: 0.3) {
+                        subview.alpha = 0
+                    } completion: { _ in
+                        subview.removeFromSuperview()
+                    }
+
+                }
+            }
+        }
+    }
+    
+    func presentAlertController(title: String ,withMessage: String) {
+        let alert = UIAlertController(title: title, message: withMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "네", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+        
     }
 }

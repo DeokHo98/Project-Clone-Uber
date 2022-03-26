@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         if Auth.auth().currentUser?.uid != nil {
-            window?.rootViewController = UINavigationController(rootViewController: HomeController())
+            window?.rootViewController = UINavigationController(rootViewController: ContainerController())
         } else {
             window?.rootViewController = UINavigationController(rootViewController: loginViewController())
         }

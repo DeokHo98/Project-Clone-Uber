@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol LocationInputViewDelegate: AnyObject {
     func dismissLocationInputView()
+    func executeSearch(query: String)
 }
 
 class LocationInputView: UIView {
@@ -60,7 +61,7 @@ class LocationInputView: UIView {
     
     private lazy var startingLocationTextField: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Current Location"
+        tf.placeholder = "현재 위치"
         tf.backgroundColor = .systemGroupedBackground
         tf.isEnabled = false
         tf.font = .systemFont(ofSize: 14)
@@ -74,15 +75,16 @@ class LocationInputView: UIView {
     
     private lazy var destinationLocationTextField: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Enter a destination.."
+        tf.placeholder = "목적지를 검색해주세요"
         tf.backgroundColor = .lightGray
         tf.returnKeyType = .search
         tf.font = .systemFont(ofSize: 14)
-        
+        tf.delegate = self
         let paddingView = UIView()
         paddingView.setDimensions(height: 30, width: 8)
         tf.leftView = paddingView
         tf.leftViewMode = .always
+        tf.text = "커피"
         return tf
     }()
     //MARK: - 라이프사이클
@@ -135,4 +137,13 @@ class LocationInputView: UIView {
     
     
     
+}
+
+extension LocationInputView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let query = textField.text else {return false}
+        delegate?.executeSearch(query: query)
+        textField.endEditing(true)
+        return true
+    }
 }

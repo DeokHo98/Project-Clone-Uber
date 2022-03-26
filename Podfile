@@ -6,9 +6,11 @@ target 'Project-Clone-Uber' do
   use_frameworks!
 
     pod 'Firebase/Auth'
-    pod 'Firebase/Firestore'
+    pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod 'Firebase/Auth'
+    pod 'GeoFire', '~> 4.0'
+
 
 
   # Pods for Project-Clone-Uber

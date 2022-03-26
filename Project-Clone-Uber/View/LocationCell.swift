@@ -6,12 +6,28 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationCell: UITableViewCell {
 
     static let indentifier = "LocationCell"
     
     //MARK: - 속성
+    var placmark: MKPlacemark? {
+        didSet {
+            titleLabel.text = placmark?.name
+            addressLabel.text = placmark?.address
+
+        }
+    }
+    
+    var type: locationType? {
+        didSet {
+            titleLabel.text = type?.description
+            addressLabel.text = type?.subtitle
+        }
+    }
+    
     var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)

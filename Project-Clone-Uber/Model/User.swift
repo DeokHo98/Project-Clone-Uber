@@ -6,15 +6,39 @@
 //
 
 import Foundation
+import CoreLocation
+
+
+enum AccountType: Int {
+    case passenger
+    case driver
+}
 
 struct User {
     let fullName: String
     let email: String
-    let accountType: Int
+    var accountType: AccountType!
+    let uid: String
+    var location: CLLocation?
+    var homeLocation: String?
+    var workLocation: String?
     
-    init(dic: [String: Any]) {
+    
+    init(uid: String,dic: [String: Any]) {
+        self.uid = uid
         self.fullName = dic["name"] as? String ?? ""
         self.email = dic["email"] as? String ?? ""
-        self.accountType = dic["accountType"] as? Int ?? 0
+        
+        if let home = dic["workLocation"] as? String {
+            self.homeLocation = home
+        }
+        
+        if let work = dic["homeLocation"] as? String {
+            self.workLocation = work
+        }
+        
+        if let index = dic["accountType"] as? Int {
+            self.accountType = AccountType(rawValue: index)
+        }
     }
 }

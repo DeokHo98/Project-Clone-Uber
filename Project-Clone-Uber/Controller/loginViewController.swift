@@ -16,7 +16,7 @@ class loginViewController: UIViewController {
     }()
     
     private let emailTextField: UITextField = {
-        return UITextField.textField(plachHolderName: "email", isSecureText: false)
+        return UITextField.textField(plachHolderName: "이메일", isSecureText: false)
    }()
     
     private lazy var emailContainerView: UIView = {
@@ -31,7 +31,7 @@ class loginViewController: UIViewController {
     
     
     private let PasswordField: UITextField = {
-         return UITextField.textField(plachHolderName: "Password", isSecureText: true)
+         return UITextField.textField(plachHolderName: "비밀번호", isSecureText: true)
     }()
     
     private lazy var PasswordContainerView: UIView = {
@@ -46,13 +46,13 @@ class loginViewController: UIViewController {
     
     
     private let LoginButton: UIButton = {
-        let button = UIButton.loginButton(buttonLabel: "Log in")
+        let button = UIButton.loginButton(buttonLabel: "로그인")
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
     private let accountButton: UIButton = {
-        let button = UIButton.textButton(text1: "Don't have an accout?  ", text2: "Sign up")
+        let button = UIButton.textButton(text1: "이메일이 없으신가요?  ", text2: "회원가입하기")
         button.addTarget(self, action: #selector(handlerSignUp), for: .touchUpInside)
         return button
     }()
@@ -73,7 +73,7 @@ class loginViewController: UIViewController {
                 print("로그인 에러")
                 return
             } else {
-                navigationController?.pushViewController(HomeController(), animated: true)
+                navigationController?.pushViewController(ContainerController(), animated: true)
             }
         }
     }

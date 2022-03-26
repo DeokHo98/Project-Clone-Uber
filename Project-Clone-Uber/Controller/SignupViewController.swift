@@ -9,19 +9,21 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GeoFire
+import CoreLocation
 
 class SignupViewController: UIViewController {
 
-    let db = Firestore.firestore()
     
     //MARK: - 속성
+    
+    private var location = LocationHnadler.shared.locationManager.location
     
     private let titleLabel: UILabel = {
         UILabel.uberTitleLabel()
     }()
     
     private let emailTextField: UITextField = {
-         return UITextField.textField(plachHolderName: "email", isSecureText: false)
+         return UITextField.textField(plachHolderName: "이메일", isSecureText: false)
     }()
     
    private lazy var emailContainerView: UIView = {
@@ -33,7 +35,7 @@ class SignupViewController: UIViewController {
     }()
     
     private let PasswordField: UITextField = {
-        return UITextField.textField(plachHolderName: "Password", isSecureText: true)
+        return UITextField.textField(plachHolderName: "패스워드", isSecureText: true)
    }()
     
     private lazy var PasswordContainerView: UIView = {
@@ -44,7 +46,7 @@ class SignupViewController: UIViewController {
     }()
     
    private let nameField: UITextField = {
-        return UITextField.textField(plachHolderName: "Full name", isSecureText: false)
+        return UITextField.textField(plachHolderName: "닉네임", isSecureText: false)
    }()
     
     private lazy var nameContainerView: UIView = {
@@ -59,7 +61,7 @@ class SignupViewController: UIViewController {
     }()
     
     private let segmentedControl: UISegmentedControl = {
-       let sg = UISegmentedControl(items: ["Rider", "Driver"])
+       let sg = UISegmentedControl(items: ["탑승자", "드라이버"])
         sg.backgroundColor = .backgroundColor
         sg.tintColor = UIColor(white: 1, alpha: 0.87)
         sg.selectedSegmentIndex = 0
@@ -67,14 +69,14 @@ class SignupViewController: UIViewController {
     }()
     
     private let LoginButton: UIButton = {
-        let button = UIButton.loginButton(buttonLabel: "Sign Up")
+        let button = UIButton.loginButton(buttonLabel: "회원가입")
         button.addTarget(self, action: #selector(handlerSignUp), for: .touchUpInside)
         return button
     }()
     
     
     private let textButton: UIButton = {
-        let button = UIButton.textButton(text1: "Already have an account?", text2: "  Sign Up")
+        let button = UIButton.textButton(text1: "이메일이 있으신가요??", text2: "  로그인하기")
         button.addTarget(self, action: #selector(handlerShowLogin), for: .touchUpInside)
         return button
     }()
@@ -85,6 +87,9 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .backgroundColor
         makeLayout()
+        
+        
+        
     }
     
     
@@ -110,13 +115,22 @@ class SignupViewController: UIViewController {
                 print("회원가입 오류")
                 return
             } else {
-                guard let uid = result?.user.email else {return}
                 let value = ["email": email, "name": name, "accountType": accountTypeIndex] as [String: Any]
-                db.collection("user").document(uid).setData(value)
-                navigationController?.popViewController(animated: true)
+                guard let uid = result?.user.uid else {return}
+                if accountTypeIndex == 1 {
+                    let geofire = GeoFire(firebaseRef: REF_DRIVER_LOCATIONS)
+                    guard let location = location else {return}
+                    
+                    geofire.setLocation(location, forKey: uid) { error in
+                        self.uploadUserDataAndDismiss(uid: uid, value: value)
+                    }
+                }
+                    uploadUserDataAndDismiss(uid: uid, value: value)
             }
         }
     }
+    
+    
     
     //MARK: - 도움 메서드
     private func makeLayout() {
@@ -146,6 +160,13 @@ class SignupViewController: UIViewController {
         textButton.centerX(inView: view)
         textButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
         
+    }
+    
+    func uploadUserDataAndDismiss(uid: String , value: [String: Any]) {
+        REF_USERS.child(uid).updateChildValues(value) { error, ref in
+            print("데이터 세이브 성공")
+        }
+        navigationController?.popViewController(animated: true)
     }
 
 
